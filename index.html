@@ -7,35 +7,61 @@
     <title>loop example</title>
 </head>
 <body>
+    <script>
+            var specialChars = ["!","@","#","$","%","^","&","*","(",")","-","_","+","-"];
+            var lowercaseChars = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+            var uppercaseChars = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+            var ints = ["1","2","3","4","5","6","7","8","9","10"]
+            
+            function clicky() {
+            
+                var userPass = document.getElementById("textfield").value;
+                var userPassArray = [];
+            
+                for (let c = 0; c < (userPass.length) ; c++) {
+                   userPassArray.push(userPass.charAt(c));
+               }
+            
+               console.log (userPassArray);
+               //now that the password has been parsed we can check it against special characters, integers, uppercase, and lowercase
+                    var numSpecial = 0;
+                    var numUppercase = 0;
+                    var numLowercase = 0;
+                    var numInts = 0;
+            
+               for (let a = 0; a < userPassArray.length; a++) {   
+            
+                    if (specialChars.indexOf(userPassArray[a]) > -1){
+                        numSpecial++;
+                    }
 
+                    if (lowercaseChars.indexOf(userPassArray[a]) > -1){
+                        numLowercase++;
+                    }
+
+                    if (uppercaseChars.indexOf(userPassArray[a]) > -1){
+                        numUppercase++;
+                    }
+                    if (ints.indexOf(userPassArray[a]) > -1){
+                        numInts++;
+                    }
+               }
+            
+          
+            console.log(numInts);
+            console.log(numLowercase);
+            console.log(numSpecial);
+            console.log(numUppercase);
+        }
+            
+            
+            
+        </script>
     <form>
         <input type = "text" id ="textfield" value = "">
+        
+        <br>
         <button  type = "button" id = "submitbutton" onclick= "clicky()">
     </form>
-
-    <script>
-    var specialChars = ["!","@","#","$","%","^","&","*","(",")","-","_","+","-"];
-    var lowercaseChars = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-    var uppercaseChars = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-
-function clicky() {
-
-    var userPass = document.getElementById("textfield").value;
-    var userPassArray = [];
-
-    for (let c = 0; c < (userPass.length) ; c++) {
-       userPassArray.push(userPass.charAt(c));
-   }
-
-   console.log (userPassArray);
-   //now that the password has been parsed we can check it against special characters, uppercase, and lowercase
-
-   
-
-}
-
-
-
-    </script>
 </body>
 </html>
