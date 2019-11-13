@@ -17,7 +17,7 @@
       placeholder="Your Secure Password"
       aria-label="Generated Password"
     ></textarea>
-    <button id="generate" onclick="#">Generate Password</button>
+    <button id="generate" onclick="passGen()">Generate Password</button>
     <button id="copy">
       Copy to Clipboard
     </button>
@@ -33,7 +33,7 @@
             var output = "";
             var passLength = prompt("How long should the password be? Must be an integer between 8 and 128");
             
-            if (Number.isInteger(passLength) || (Number.isInteger(passLength) == true && passLength < 8 || passLength > 128)) {
+            if (!Number.isInteger(passLength) || !(Number.isInteger(passLength) == true && passLength < 8 || passLength > 128)) {
                 alert("Your input did not fit the specified parameters.");
                 location.reload();
             }
@@ -110,6 +110,7 @@
                    }
 
                    console.log(output);
+                   return output;
                 }
                 
             }
