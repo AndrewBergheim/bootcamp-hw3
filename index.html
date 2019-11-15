@@ -17,29 +17,31 @@
 <div id = "center-container" class = "container">    
 <div class = "row">
     <div class = "col-xs-12">
-    <h2>Generate a Password</h2>
+    <h2 id = "generate-head" style = "font-size: 25px;">Generate a Password</h2>
     </div>
 </div>
 <div class = "row">
-        <div class = "col-xs-12">
-    <textarea
+        <div class = "col-xl-12">
+            <div style="border-top: 1px solid #dddddd; border-bottom: 1px solid #dddddd;">
+    <textarea class="form-group"
       readonly
       id="password"
       placeholder="Your Secure Password"
       aria-label="Generated Password"
     ></textarea>
+        </div>
     </div>
 </div>
 
 <div class = "row">
     <div class = "col-xs-12 col-sm-4">
-    <button id="generate" onclick="passGen()">Generate Password</button>
+    <button id="generate" class = "btn rounded-left rounded-right" onclick="passGen()">Generate Password</button>
     </div>
     
     <div class = "col-xs-12 col-sm-4"></div>
     
     <div class = "col-xs-12 col-sm-4">
-    <button id="copy" onclick="copyFunction()">
+    <button id="copy" class = "btn rounded-left rounded-right" onclick="copyFunction()">
       Copy to Clipboard
     </button>
     </div>
